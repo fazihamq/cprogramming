@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>pay slip</title>
+<script type="text/javascript">
+function pay()
+{
+ var a=parseInt(document.slip.BP.value);
+ var b=parseInt(document.slip.LOAN.value);
+ var C=parseInt(document.slip.PF.value);
+ var d=parseInt(document.slip.INSURANCE.value);
+ if(a<=20000)
+ {
+   var dd=a*(38/100);
+   var hh=500;
+   document.slip.DA.value=dd;
+   document.slip.HRA.value=hh;
+   }
+ else if(a>20000&&a<=30000)
+ {
+   var dd=a*(30/100);
+   var hh=250;
+   document.slip.DA.value=dd;
+   document.slip.HRA.value=hh;
+ }
+ else
+ {
+   var dd=a*(25/100);
+   var hh=150;
+   document.slip.DA.value=dd;
+   document.slip.HRA.value=hh;
+ }
+var gg=a+dd+hh;
+document.slip.G.value=gg;
+var np=gg-(b+c+d);
+document.slip.N.value=np; 
+}
+</script>
+</head>
+<body>
+<form name="slip">
+E-ID:<input type="text"name="E-ID"><br><br>
+Employee Name:<input type="text"name="Employee Name"><br><br>
+BP:<input type="text"name="BP"><br><br>
+LOAN:<input type="text"name="LOAN"><br><br>
+PF:<input type="text"name="PF"><br><br>
+INSURANCE:<input type="text"name="INSURANCE"><br><br>
+<input type="button" value="submit" onclick=pay()><br><br><br><br>
+DA:<input type="text"name="DA"><br><br>
+GROSS PAY:<input type="text"name="G"><br><br>
+NET PAY:<input type="text"name="N"><br><br>
+HRA:<input type="text"name="HRA"><br><br>
+</form>
+
+
+
+
+
+
+
